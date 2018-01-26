@@ -29,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sql += ")";
         sqLiteDatabase.execSQL(sql);
 
-        sqLiteDatabase.execSQL("INSERT INTO MyTable(Name,Ido,Keido) values ('Fuji Islands',-18.158147,178.43382);");
+        sqLiteDatabase.execSQL("INSERT INTO MyTable(Name,Ido,Keido) values ('Republic of Fiji',-18.158147,178.43382);");
         sqLiteDatabase.execSQL("INSERT INTO MyTable(Name,Ido,Keido) values ('Papua New Guinea',-9.4283884,147.19202);");
         sqLiteDatabase.execSQL("INSERT INTO MyTable(Name,Ido,Keido) values ('Vanuatu',-17.734924,168.32052);");
         sqLiteDatabase.execSQL("INSERT INTO MyTable(Name,Ido,Keido) values ('Solomon Islands',-9.433728,159.95581);");

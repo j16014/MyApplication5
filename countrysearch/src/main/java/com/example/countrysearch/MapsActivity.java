@@ -61,7 +61,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         UiSettings settings = mMap.getUiSettings();
         // ズームイン・アウトボタンの有効化
         settings.setZoomControlsEnabled(true);
-
-        mMap.setBuildingsEnabled(true);
     }
 }

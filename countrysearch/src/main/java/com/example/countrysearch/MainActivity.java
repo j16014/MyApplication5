@@ -5,6 +5,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,12 +32,16 @@ public class MainActivity extends AppCompatActivity{
     private Button delete;
     /* 更新ボタン */
     private Button change;
+
+    TextView searchText;
     /* 国名変数 */
     private String text;
     /* 緯度変数 */
     private String text2;
     /* 経度変数 */
     private String text3;
+
+    int flag1=0,flag2=0,flag3=0;
 
     /* 追加ボタンのClickリスナー */
     private View.OnClickListener join_ClickListener = new View.OnClickListener(){
@@ -70,6 +78,12 @@ public class MainActivity extends AppCompatActivity{
 
         // db情報表示
         dbDisplay();
+
+        if(flag1==1&&flag2==1&&flag3==1){
+            //TextView searchText = new TextView(this);
+            searchText.setTextColor(Color.RED);
+            setContentView(searchText);
+        }
     }
 
     /* 追加ボタンClick処理 */
@@ -81,9 +95,10 @@ public class MainActivity extends AppCompatActivity{
         text2 = idoT.getText().toString();
         text3 = keidoT.getText().toString();
 
-        if(Double.parseDouble(text2)<=84&&Double.parseDouble(text2)>=-84&&Double.parseDouble(text3)<=180&&Double.parseDouble(text3)>=-180) {
-            // 入力欄に入力されている場合に処理を実行
-            if (text.length() != 0 && text2.length() != 0 && text3.length() != 0) {
+        // 入力欄に入力されている場合に処理を実行
+        if (text.length() != 0 && text2.length() != 0 && text3.length() != 0) {
+            // 緯度と緯度の限界値を設定
+            if(Double.parseDouble(text2)<=84&&Double.parseDouble(text2)>=-84&&Double.parseDouble(text3)<=180&&Double.parseDouble(text3)>=-180) {
                 DatabaseHelper dbHelper = new DatabaseHelper(this);
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -93,10 +108,13 @@ public class MainActivity extends AppCompatActivity{
                 values.put("Ido", Double.parseDouble(text2));
                 values.put("Keido", Double.parseDouble(text3));
 
+                // データベースに入力された値が登録されていないか確認
                 long recodeCount = DatabaseUtils.queryNumEntries(db, "Mytable", "Name=?", new String[]{text});
 
+                // 登録されていない場合
                 if (recodeCount == 0) {
                     try {
+                        // 追加処理
                         ret = db.insert("MyTable", null, values);
 
                         // db情報表示
@@ -110,6 +128,11 @@ public class MainActivity extends AppCompatActivity{
         // 結果トースト表示
         if (ret == -1) {
             Toast.makeText(this, "追加失敗", Toast.LENGTH_SHORT).show();
+            if(flag2==0){
+                flag2=1;
+            }else{
+                flag2=0;
+            }
         } else {
             Toast.makeText(this, "追加成功", Toast.LENGTH_SHORT).show();
         }
@@ -131,10 +154,13 @@ public class MainActivity extends AppCompatActivity{
             ContentValues val = new ContentValues();
             val.put("name", text);
 
+            // データベースに入力された値が登録済みか確認
             long recodeCount = DatabaseUtils.queryNumEntries(db, "Mytable", "Name=?", new String[]{text});
 
+            // 登録済みの場合
             if (recodeCount == 1) {
                 try {
+                    // 削除処理
                     ret = db.delete("MyTable", "NAME= ?", new String[]{text});
 
                     // db情報表示
@@ -147,6 +173,11 @@ public class MainActivity extends AppCompatActivity{
         // 結果トースト表示
         if (ret == -1) {
             Toast.makeText(this, "削除失敗", Toast.LENGTH_SHORT).show();
+            if(flag3==0){
+                flag3=1;
+            }else{
+                flag3=0;
+            }
         } else {
             Toast.makeText(this, "削除成功", Toast.LENGTH_SHORT).show();
         }
@@ -165,11 +196,14 @@ public class MainActivity extends AppCompatActivity{
             SQLiteDatabase db = dbHelper.getWritableDatabase();
             Cursor c;
 
+            // データベースに入力された値が登録済みか確認
             long recodeCount = DatabaseUtils.queryNumEntries(db, "Mytable", "Name=?", new String[]{text});
 
+            // 登録済みの場合
             if (recodeCount == 1) {
                 ret = 1;
                 try {
+                    // 検索処理
                     c = db.rawQuery("select * from Mytable where Name = ?", new String[]{text});
 
                     if (c.moveToFirst()) {
@@ -206,9 +240,10 @@ public class MainActivity extends AppCompatActivity{
         text2 = idoT.getText().toString();
         text3 = keidoT.getText().toString();
 
-        if(Double.parseDouble(text2)<=84&&Double.parseDouble(text2)>=-84&&Double.parseDouble(text3)<=180&&Double.parseDouble(text3)>=-180) {
-            // 入力欄に入力されている場合に処理を実行
-            if (text.length() != 0 && text2.length() != 0 && text3.length() != 0) {
+        // 入力欄に入力されている場合に処理を実行
+        if (text.length() != 0 && text2.length() != 0 && text3.length() != 0) {
+            // 緯度と緯度の限界値を設定
+            if(Double.parseDouble(text2)<=84&&Double.parseDouble(text2)>=-84&&Double.parseDouble(text3)<=180&&Double.parseDouble(text3)>=-180) {
                 DatabaseHelper dbHelper = new DatabaseHelper(this);
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -218,10 +253,13 @@ public class MainActivity extends AppCompatActivity{
                 values.put("Ido", Double.parseDouble(text2));
                 values.put("Keido", Double.parseDouble(text3));
 
+                // データベースに入力された値が登録済みか確認
                 long recodeCount = DatabaseUtils.queryNumEntries(db, "Mytable", "Name=?", new String[]{text});
 
+                // 登録済みの場合
                 if (recodeCount == 1) {
                     try {
+                        // 更新処理
                         ret = db.update("MyTable", values, "Name=?", new String[]{text});
 
                         // db情報表示
@@ -235,6 +273,11 @@ public class MainActivity extends AppCompatActivity{
         // 結果トースト表示
         if (ret == -1){
             Toast.makeText(this,"変更失敗",Toast.LENGTH_SHORT).show();
+            if(flag1==0){
+                flag1=1;
+            }else{
+                flag1=0;
+            }
         } else {
             Toast.makeText(this,"変更成功",Toast.LENGTH_SHORT).show();
         }
