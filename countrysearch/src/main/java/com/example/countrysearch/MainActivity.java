@@ -32,16 +32,12 @@ public class MainActivity extends AppCompatActivity{
     private Button delete;
     /* 更新ボタン */
     private Button change;
-
-    TextView searchText;
     /* 国名変数 */
     private String text;
     /* 緯度変数 */
     private String text2;
     /* 経度変数 */
     private String text3;
-
-    int flag1=0,flag2=0,flag3=0;
 
     /* 追加ボタンのClickリスナー */
     private View.OnClickListener join_ClickListener = new View.OnClickListener(){
@@ -78,12 +74,6 @@ public class MainActivity extends AppCompatActivity{
 
         // db情報表示
         dbDisplay();
-
-        if(flag1==1&&flag2==1&&flag3==1){
-            //TextView searchText = new TextView(this);
-            searchText.setTextColor(Color.RED);
-            setContentView(searchText);
-        }
     }
 
     /* 追加ボタンClick処理 */
@@ -128,11 +118,6 @@ public class MainActivity extends AppCompatActivity{
         // 結果トースト表示
         if (ret == -1) {
             Toast.makeText(this, "追加失敗", Toast.LENGTH_SHORT).show();
-            if(flag2==0){
-                flag2=1;
-            }else{
-                flag2=0;
-            }
         } else {
             Toast.makeText(this, "追加成功", Toast.LENGTH_SHORT).show();
         }
@@ -173,11 +158,6 @@ public class MainActivity extends AppCompatActivity{
         // 結果トースト表示
         if (ret == -1) {
             Toast.makeText(this, "削除失敗", Toast.LENGTH_SHORT).show();
-            if(flag3==0){
-                flag3=1;
-            }else{
-                flag3=0;
-            }
         } else {
             Toast.makeText(this, "削除成功", Toast.LENGTH_SHORT).show();
         }
@@ -273,11 +253,6 @@ public class MainActivity extends AppCompatActivity{
         // 結果トースト表示
         if (ret == -1){
             Toast.makeText(this,"変更失敗",Toast.LENGTH_SHORT).show();
-            if(flag1==0){
-                flag1=1;
-            }else{
-                flag1=0;
-            }
         } else {
             Toast.makeText(this,"変更成功",Toast.LENGTH_SHORT).show();
         }
