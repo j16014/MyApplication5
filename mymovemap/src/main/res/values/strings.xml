@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyMoveMap</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="mapButton">地図表示</string>
+    <string name="idoText">緯度</string>
+    <string name="keidoText">経度</string>
+    <string name="titleText">タイトル</string>
+    <string name="ido">緯度</string>
+    <string name="keido">経度</string>
+    <string name="title">タイトル</string>
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CountrySearch</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="ErrorMessage">そのような国は存在しません。</string>
+    <string name="modoru">戻る</string>
+    <string name="SearchText">国名を英語で入力</string>
+    <string name="SearchButton">検索</string>
+    <string name="IdoText">緯度</string>
+    <string name="KeidoText">経度</string>
+    <string name="ChangeButton">変更</string>
+    <string name="JoinText">追加</string>
+    <string name="DeleteText">削除</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nameT" type="id" />
+    <item name="heightT" type="id" />
+    <item name="weightT" type="id" />
+    <item name="resultTv" type="id" />
+    <item name="selectB" type="id" />
+    <item name="insertB" type="id" />
+    <item name="deleteB" type="id" />
+</resources>

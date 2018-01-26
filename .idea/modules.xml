@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Debug app/Debug app.iml" filepath="$PROJECT_DIR$/Debug app/Debug app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hellokitty/Hellokitty.iml" filepath="$PROJECT_DIR$/Hellokitty/Hellokitty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hellokitty2/Hellokitty2.iml" filepath="$PROJECT_DIR$/Hellokitty2/Hellokitty2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplication5.iml" filepath="$PROJECT_DIR$/MyApplication5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SensorApplication/SensorApplication.iml" filepath="$PROJECT_DIR$/SensorApplication/SensorApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SensorApplication2/SensorApplication2.iml" filepath="$PROJECT_DIR$/SensorApplication2/SensorApplication2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/countrysearch/countrysearch.iml" filepath="$PROJECT_DIR$/countrysearch/countrysearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intentapplication/intentapplication.iml" filepath="$PROJECT_DIR$/intentapplication/intentapplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myapplication/myapplication.iml" filepath="$PROJECT_DIR$/myapplication/myapplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mymapsapplication/mymapsapplication.iml" filepath="$PROJECT_DIR$/mymapsapplication/mymapsapplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mymovemap/mymovemap.iml" filepath="$PROJECT_DIR$/mymovemap/mymovemap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mymovepagesapplication/mymovepagesapplication.iml" filepath="$PROJECT_DIR$/mymovepagesapplication/mymovepagesapplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mysqlapplication/mysqlapplication.iml" filepath="$PROJECT_DIR$/mysqlapplication/mysqlapplication.iml" />
+    </modules>
+  </component>
+</project>

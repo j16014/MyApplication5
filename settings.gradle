@@ -1,0 +1,1 @@
+include ':app', ':myapplication', ':Debug app', ':Hellokitty', ':Hellokitty2', ':SensorApplication', ':SensorApplication2', ':mymapsapplication', ':mymovepagesapplication', ':mymovemap', ':mysqlapplication', ':intentapplication', ':countrysearch'
