@@ -11,7 +11,7 @@ public class ErrorActivity extends AppCompatActivity {
 
     /*　作成者　長倉　*/
 
-    Button movepage,movelogin;
+    Button movepage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
