@@ -18,6 +18,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity{
+
+    /*　作成者　長倉　*/
+
     /* 国名入力項目 */
     private EditText nameT;
     /* 緯度入力項目 */

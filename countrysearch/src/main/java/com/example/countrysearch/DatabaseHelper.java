@@ -20,6 +20,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+
+        /*　作成者　稲葉　*/
+
         String sql = "";
         sql += "create table MyTable(";
         sql += "No integer primary key";

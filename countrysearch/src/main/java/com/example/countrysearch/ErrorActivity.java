@@ -8,8 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ErrorActivity extends AppCompatActivity {
-    Button movepage;
-    private TextView textView3;
+
+    /*　作成者　長倉　*/
+
+    Button movepage,movelogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +26,6 @@ public class ErrorActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-        //SELECT * FROM entry ORDER BY RANDOM();
 
     }
 }

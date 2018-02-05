@@ -14,6 +14,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+
+    /*　作成者　長倉　*/
+
     private GoogleMap mMap;
     /* 国名、緯度、経度の変数 */
     String idoo,keidoo,namee;
